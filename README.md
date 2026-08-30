@@ -13,3 +13,6 @@ One line per directory. Hidden directories (`.claude/`, `.github/`) are harness
 and CI config and stay out of the map.
 
 - `scripts/`: `limits.py`, the one repository check: token budget, map, goals ↔ tests by name, four Markdown files only, test imports, zero comments.
+- `worldlab/`: the package: `env/` now, later `tasks/`, `verifiers/`, `agent_core/`, `episode_runtime/`, `eval/`.
+- `worldlab/env/`: the SQLite world, its tools and its digest.
+- `tests/`: one file per line of `GOALS.md`; they see the system only through `worldlab.testing`.

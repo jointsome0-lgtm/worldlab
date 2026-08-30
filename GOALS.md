@@ -18,7 +18,7 @@ Rules of this file:
 
 ## Invariants of worldlab
 
-No lines yet. The first one lands with its test.
+1. Digest is canonical: two worlds in one state give one digest, whatever SQLite did with pages. `tests/test_digest.py`
 
 ## Non-goals
 
