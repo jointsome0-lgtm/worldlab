@@ -1,0 +1,26 @@
+# worldlab
+
+Long term: environments where an agent's trace can be replayed, scored and
+trusted: a world generated from a grammar with a seed, tools the world
+enforces, a log nothing can rewrite, verifiers that read final state and the
+log, and a loop that survives timeouts, retries and cancellation.
+
+Short term: a stateful SQLite world with two typed tools, twenty tasks with a
+checkable outcome, a bare agent loop, and a baseline of two models on it.
+
+Rules of this file:
+
+- A line below exists only if it has a test. Growing this file costs a test.
+- A test sees the system only through the public API and the fake provider's
+  recording. It knows nothing about tables, modules or repositories.
+- There are exactly as many test files as lines below. A new file needs a new
+  line, and the PR says why an existing test could not be strengthened.
+
+## Invariants of worldlab
+
+No lines yet. The first one lands with its test.
+
+## Non-goals
+
+A framework. A second runtime next to the first. Hashing the SQLite file.
+Training runs before the environment holds its invariants.
