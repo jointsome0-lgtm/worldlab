@@ -7,12 +7,16 @@ code, tests and nothing else.
 
 ## Who writes what
 
-The goal is that Agniv understands the code and can apply it without help.
-Design decisions are talked through before any code. Code that carries a
-decision, Agniv writes: contracts, invariants, tests for them, the loop.
-Boilerplate the agent may write after the design is agreed, and it explains
-it. Test: if Agniv could not rewrite a piece from memory in ten minutes, it is
-his to write.
+The goal is that Agniv can design a mechanism, set the task and repair the
+result without help. Design decisions are talked through before any code.
+The agent writes the code, including tests, after Agniv states the contract
+and one concrete failure case. The check is independent repair: at the end of
+each mechanism the agent plants one small fault Agniv has not seen in a
+scratch copy, with a failing example, and in fifteen minutes Agniv names the
+invariant, finds the cause, makes the smallest fix and shows red before and
+green after. Talk alone does not pass. A failed check buys one focused
+exercise on that mechanism before building on it. The journal's rule 8 is
+the source; this section mirrors it.
 
 ## Three sources of truth, one each
 
