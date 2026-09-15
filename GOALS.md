@@ -11,14 +11,16 @@ checkable outcome, a bare agent loop, and a baseline of two models on it.
 Rules of this file:
 
 - A line below exists only if it has a test. Growing this file costs a test.
-- A test sees the system only through the public API and the fake provider's
-  recording. It knows nothing about tables, modules or repositories.
+- A test sees the system through the public API and the fake provider's
+  recording, and reaches the raw connection only to play the adversary or to
+  move storage. It knows nothing about modules or repositories.
 - There are exactly as many test files as lines below. A new file needs a new
   line, and the PR says why an existing test could not be strengthened.
 
 ## Invariants of worldlab
 
 1. Digest is canonical: two worlds in one state give one digest, whatever SQLite did with pages. `tests/test_digest.py`
+2. Events are append-only within an episode: a written row survives UPDATE, DELETE and REPLACE unchanged, each row carries the hash of the one before, and reset starts an empty log. `tests/test_events.py`
 
 ## Non-goals
 
